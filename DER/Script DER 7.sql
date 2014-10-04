@@ -88,19 +88,6 @@ CREATE TABLE  Manifiesto (
   PRIMARY KEY (id_Manifiesto));
  
 
-/*-- -----------------------------------------------------
--- Table ItemRemito
--- -----------------------------------------------------
-IF OBJECT_ID('ItemRemito', 'U') IS NOT NULL
-DROP TABLE ItemRemito;
- 
-
-CREATE TABLE  ItemRemito (
-  Id_Item	INT NOT NULL,
-  Id_Remito INT NULL,
-  PRIMARY KEY (Id_Item))
-  */
-
 -- -----------------------------------------------------
 -- Table Remito
 -- -----------------------------------------------------
@@ -110,33 +97,14 @@ DROP TABLE Remito;
 
 CREATE TABLE  Remito (
   Id_Remito		INT NOT NULL,
-  --id_Manifiesto INT NOT NULL,
   id_SucOrigen	INT NULL,
   id_SucDestino	INT NULL,
   FechaEntrega	DATETIME NULL,
   FechaMaxima	DATETIME NULL,
   CondicionesEspeciales VARCHAR(400) NULL,
   PRIMARY KEY (Id_Remito),
- -- FOREIGN KEY (id_Manifiesto)   REFERENCES Manifiesto (id_Manifiesto),
   FOREIGN KEY (id_SucDestino)   REFERENCES sucursal (id_Sucursal),
   FOREIGN KEY (id_SucOrigen)    REFERENCES sucursal (id_Sucursal))
-   
-/*-- -----------------------------------------------------
--- Table Item
--- -----------------------------------------------------
-DROP TABLE Item;
-  
-
-CREATE TABLE  Item (
-  Paquete VARCHAR(45) NULL,
-  Id_Item INT NOT NULL,
-  PRIMARY KEY (Id_Item),
-  CONSTRAINT fk_Item_ItemRemito1
-    FOREIGN KEY (Id_Item)
-    REFERENCES ItemRemito (Id_Item)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-  */
 
 
 -- -----------------------------------------------------
@@ -188,9 +156,8 @@ CREATE TABLE  Tracking (
   id_Manifiesto	INT NOT NULL,
   id_vehiculo	INT NOT NULL,
   PRIMARY KEY (id_Tracking, Id_Remito, id_Manifiesto),
-  CONSTRAINT fk_Tracking_Remito1
-    FOREIGN KEY (Id_Remito , id_Manifiesto)  REFERENCES Remito (Id_Remito , id_Manifiesto ),
-	FOREIGN KEY (id_vehiculo)  REFERENCES Vehiculo (id_vehiculo))
+  FOREIGN KEY (Id_Remito)  REFERENCES Remito (Id_Remito ),
+  FOREIGN KEY (id_vehiculo)  REFERENCES Vehiculo (id_vehiculo))
   
 
 -- -----------------------------------------------------
@@ -243,8 +210,8 @@ CREATE TABLE  Paquete (
   Ancho					INT NULL,
   Peso					FLOAT NULL,
   Volumen				FLOAT NULL,
-  Id_Tipo_Tratamiento	INT NULL,
-  ID_Tipo_Fragilidad	INT NULL,
+  Tratamiento			VARCHAR(45) NULL,
+  Fragilidad			VARCHAR(45) NULL,
   Apilable				INT NULL,
   ApilableCantidad		INT NULL,
   FechaEntrega			DATETIME NULL,
@@ -261,57 +228,6 @@ CREATE TABLE  Paquete (
   FOREIGN KEY (Id_Remito)		REFERENCES Remito (Id_Remito),
   FOREIGN KEY (id_Manifiesto)   REFERENCES Manifiesto (id_Manifiesto))
 
-
-
--- -----------------------------------------------------
--- Table Fragilidad
--- -----------------------------------------------------
-IF OBJECT_ID('Fragilidad', 'U') IS NOT NULL
-DROP TABLE Fragilidad;
-  
-
-CREATE TABLE  Fragilidad (
-  id_Paquete	INT NOT NULL,
-  Descripcion	VARCHAR(45) NULL,
-  PRIMARY KEY (id_Paquete),
-  CONSTRAINT fk_Fragilidad_Paquete1
-    FOREIGN KEY (id_Paquete)    REFERENCES Paquete (id_Paquete))
-  
-
-
--- -----------------------------------------------------
--- Table Tratamiento
--- -----------------------------------------------------
-IF OBJECT_ID('Tratamiento', 'U') IS NOT NULL
-DROP TABLE Tratamiento;
-  
-
-CREATE TABLE  Tratamiento (
-  Id_Paquete	INT NOT NULL,
-  Descripcion	VARCHAR(45) NULL,
-  PRIMARY KEY (Id_Paquete),
-  CONSTRAINT fk_Tratamiento_Paquete1
-    FOREIGN KEY (Id_Paquete)    REFERENCES Paquete (id_Paquete))
-  
-
-
-  
-
-
-/*-- -----------------------------------------------------
--- Table ItemRecibo
--- -----------------------------------------------------
-DROP TABLE ItemRecibo;
-  
-
-CREATE TABLE  ItemRecibo (
-  Id_ItemRecibo	INT NOT NULL,
-  Id_Recibo		INT NOT NULL,
-  id_Paquete	INT NOT NULL,
-  PRIMARY KEY (Id_ItemRecibo),
-  FOREIGN KEY (Id_Recibo) REFERENCES Recibo (Id_Recibo),
-  FOREIGN KEY (id_Paquete) REFERENCES Paquete (id_Paquete))
-  */
 
 
 -- -----------------------------------------------------
@@ -491,31 +407,6 @@ CREATE TABLE  PaqueteRemitoIntersucursal (
 -- -----------------------------------------------------
 -- Table TrackingRemitoIntersucursal
 -- -----------------------------------------------------
- 
-/*
-  CREATE TABLE  TrackingRemitoIntersucursal (
-  id_Tracking			 INT NOT NULL,
-  Id_Remitointersucursal INT NOT NULL,
-  PRIMARY KEY (id_Tracking, Id_Remitointersucursal),
-  FOREIGN KEY (id_Tracking)			   REFERENCES Tracking (id_Tracking),
-  FOREIGN KEY (Id_Remitointersucursal) REFERENCES RemitoIntersucursal (id_RemitoIntersucursal))
- */
-
-IF OBJECT_ID('Tracking', 'U') IS NOT NULL
-DROP TABLE Tracking;
- 
-
-CREATE TABLE  Tracking (
-  id_Tracking	INT NOT NULL,
-  Id_Remito		INT NOT NULL,
-  id_Manifiesto	INT NOT NULL,
-  id_vehiculo	INT NOT NULL,
-  PRIMARY KEY (id_Tracking, Id_Remito, id_Manifiesto),
-  CONSTRAINT fk_Tracking_Remito1
-    FOREIGN KEY (Id_Remito , id_Manifiesto)  REFERENCES Remito (Id_Remito , id_Manifiesto ),
-	FOREIGN KEY (id_vehiculo)  REFERENCES Vehiculo (id_vehiculo))
-  
-
 IF OBJECT_ID('TrackingRemitoIntersucursal', 'U') IS NOT NULL
 DROP TABLE TrackingRemitoIntersucursal;
 
@@ -614,24 +505,6 @@ CREATE TABLE  PlanTareasMantenimiento (
 -- Table PaqueteDestinatario
 -- -----------------------------------------------------
  
-/*
-CREATE TABLE  PaqueteDestinatario (
-  id_Paquete			 INT NOT NULL,
-  id_RemitoIntersucursal INT NOT NULL,
-  id_Destinatario		 INT NOT NULL,
-  PRIMARY KEY (id_Paquete, id_RemitoIntersucursal, id_Destinatario),
-  FOREIGN KEY (id_Paquete , id_RemitoIntersucursal)  REFERENCES Paquete (id_Paquete)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  FOREIGN KEY ( id_RemitoIntersucursal)
-    REFERENCES RemitoIntersucursal (id_RemitoIntersucursal)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  FOREIGN KEY (id_Destinatario)
-    REFERENCES Destinatario (id_Destinatario)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION   )
-  */
 IF OBJECT_ID('PaqueteDestinatario', 'U') IS NOT NULL
 DROP TABLE PaqueteDestinatario;
     
