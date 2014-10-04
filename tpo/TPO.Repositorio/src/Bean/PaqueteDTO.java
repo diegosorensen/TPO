@@ -1,18 +1,9 @@
-package Entity;
+package Bean;
 
-import javax.persistence.*;
+import java.sql.Date;
 
-import net.sourceforge.jtds.jdbc.DateTime;
-
-@Entity
-@Table (name="paquete")
-public class Paquete {
-	
-	@Id
-	@ManyToMany
-	@JoinTable(name		="paquecliente",
-	joinColumns 		= @JoinColumn(name="id_paquete"),
-	inverseJoinColumns 	= @JoinColumn(name="id_cliente"))		
+public class PaqueteDTO {
+			
 	private int 	 id_Paquete;		
 	private int 	 NroPaqute;			
 	private String 	 Clase;				
@@ -26,7 +17,7 @@ public class Paquete {
 	private int 	 ID_Tipo_Fragilidad;
 	private int  	 Apilable;
 	private int  	 ApilableCantidad;
-	private DateTime FechaEntrega;
+	private Date FechaEntrega;
 	private String 	 CoordenadaGps;
 	private int 	 Id_remito;
 	private int 	 id_Manifiesto;
@@ -116,10 +107,10 @@ public class Paquete {
 	public void setApilableCantidad(int apilableCantidad) {
 		ApilableCantidad = apilableCantidad;
 	}
-	public DateTime getFechaEntrega() {
+	public Date getFechaEntrega() {
 		return FechaEntrega;
 	}
-	public void setFechaEntrega(DateTime fechaEntrega) {
+	public void setFechaEntrega(Date fechaEntrega) {
 		FechaEntrega = fechaEntrega;
 	}
 	public String getCoordenadaGps() {

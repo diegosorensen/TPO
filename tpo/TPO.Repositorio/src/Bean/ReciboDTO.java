@@ -1,31 +1,15 @@
-package Entity;
+package Bean;
 
-import java.util.ArrayList;
-import java.util.List;
+public class ReciboDTO {
 
-import javax.persistence.*;
 
-@Entity
-@Table (name="Recibo")
-public class Recibo {
-
-	@Id
 	private int ID_Recibo;	
 	private int ID_Cliente;	
 	private int id_itemRecibo; 
 	private int Cantidad;		
 	private int Importe;
 	
-	@OneToMany (cascade=CascadeType.ALL)
-	private List<Paquete> paquetes = new ArrayList<Paquete>();
-
 	
-	public List<Paquete> getPaquetes() {
-		return paquetes;
-	}
-	public void setPaquetes(List<Paquete> paquetes) {
-		this.paquetes = paquetes;
-	}
 	public int getID_Recibo() {
 		return ID_Recibo;
 	}

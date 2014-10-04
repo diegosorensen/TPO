@@ -1,22 +1,11 @@
-package Entity;
+package Bean;
 
 import java.util.Date;
 
-import javax.persistence.*;
+public class EnvioDTO {
 
-@Entity
-@Table (name="envio")
-public class Envio {
-
-	@Id
-	@ManyToMany
-	@JoinTable(name		="PaqueEnvio",
-	joinColumns 		= @JoinColumn(name="id_envio"),
-	inverseJoinColumns 	= @JoinColumn(name="id_paquete"))	
 	private int id_Envio;				 
 	private int id_remito_intersucursal;
-	@OneToMany
-	@JoinColumn(name="EmpresaSubcontratada")
 	private int ID_EmpresaSubcontratada;
 	private String Estado;				 
 	private Date Fecha;					 

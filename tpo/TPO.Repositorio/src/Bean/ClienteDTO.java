@@ -1,20 +1,12 @@
-package Entity;
+package Bean;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.*;
 
-@Entity
-@Table (name="Cliente")
-public class Cliente {
+public class ClienteDTO {
 
-	@Id
-	@ManyToMany
-	@JoinTable(name		="paquecliente",
-	joinColumns 		= @JoinColumn(name="id_cliente"),
-	inverseJoinColumns 	= @JoinColumn(name="id_paquete"))	
 	private int    id_cliente;
 	private int    TipoCliente;	
 	private String Direccion;	
@@ -27,12 +19,16 @@ public class Cliente {
 	private String DeudaMaxima;
 	private String Autorizacion;	
 	private Date   FechaHora;
-	
-	@OneToMany (cascade=CascadeType.ALL)
-	private List<Recibo> recibos = new ArrayList<Recibo>();
+
+	private List<ReciboDTO> recibos = new ArrayList<ReciboDTO>();
 
 	
-	
+	public List<ReciboDTO> getRecibos() {
+		return recibos;
+	}
+	public void setRecibos(List<ReciboDTO> recibos) {
+		this.recibos = recibos;
+	}
 	public int getId_cliente() {
 		return id_cliente;
 	}

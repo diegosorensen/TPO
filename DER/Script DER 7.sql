@@ -300,12 +300,36 @@ CREATE TABLE  Sucursal_has_Empleado (
     FOREIGN KEY (Empleado_id_Empleado , Empleado_id_Area) REFERENCES Empleado (id_Empleado , id_Area))
 
 -- -----------------------------------------------------
+-- Table EmpresaSubcontratada
+-- -----------------------------------------------------
+IF OBJECT_ID('EmpresaSubcontratada', 'U') IS NOT NULL
+DROP TABLE EmpresaSubcontratada;
+  
+/* 
+  CREATE TABLE  EmpresaSubcontratada (
+  id_EmpresaSubcontratada	INT NOT NULL,
+  RazonSocial				VARCHAR(45) NULL,
+  CUIT						VARCHAR(15) NULL,
+  Tipo						VARCHAR(45) NULL,
+  Id_VehiculoSubcontratado	INT NOT NULL,
+  PRIMARY KEY (id_EmpresaSubcontratada),
+  FOREIGN KEY (Id_VehiculoSubcontratado) REFERENCES VehiculoSubcontratado (Id_VehiculoSubcontratado))
+  */
+  CREATE TABLE  EmpresaSubcontratada (
+  id_EmpresaSubcontratada	INT NOT NULL,
+  RazonSocial				VARCHAR(45) NULL,
+  CUIT						VARCHAR(15) NULL,
+  Tipo						VARCHAR(45) NULL,
+  PRIMARY KEY (id_EmpresaSubcontratada))
+
+
+-- -----------------------------------------------------
 -- Table VehiculoSubcontratado
 -- -----------------------------------------------------
 IF OBJECT_ID('VehiculoSubcontratado', 'U') IS NOT NULL
 DROP TABLE VehiculoSubcontratado;
   
-
+/*
 CREATE TABLE  VehiculoSubcontratado (
   id_VehiculoSubcontratado	INT NOT NULL,
   patente					VARCHAR(45) NULL,
@@ -313,24 +337,18 @@ CREATE TABLE  VehiculoSubcontratado (
   peso						FLOAT NULL,
   tipo						VARCHAR(45) NULL,
   PRIMARY KEY (id_VehiculoSubcontratado))  
+  */
+  CREATE TABLE  VehiculoSubcontratado (
+  id_VehiculoSubcontratado	INT NOT NULL,
+  patente					VARCHAR(45) NULL,
+  volumen					FLOAT NULL,
+  peso						FLOAT NULL,
+  tipo						VARCHAR(45) NULL,
+  id_EmpresaSubcontratada	INT NOT NULL,
+  PRIMARY KEY (id_VehiculoSubcontratado),
+  FOREIGN KEY (id_EmpresaSubcontratada) REFERENCES EmpresaSubcontratada (id_EmpresaSubcontratada))
+  
 
-  
--- -----------------------------------------------------
--- Table EmpresaSubcontratada
--- -----------------------------------------------------
-IF OBJECT_ID('EmpresaSubcontratada', 'U') IS NOT NULL
-DROP TABLE EmpresaSubcontratada;
-  
-
-CREATE TABLE  EmpresaSubcontratada (
-  id_EmpresaSubcontratada INT NOT NULL,
-  RazonSocial	VARCHAR(45) NULL,
-  CUIT			VARCHAR(15) NULL,
-  Tipo			VARCHAR(45) NULL,
-  Id_VehiculoSubcontratado INT NOT NULL,
-  PRIMARY KEY (id_EmpresaSubcontratada),
-  FOREIGN KEY (Id_VehiculoSubcontratado) REFERENCES VehiculoSubcontratado (Id_VehiculoSubcontratado))
-  
   
 
 
