@@ -14,6 +14,12 @@ import javax.persistence.Table;
 @Table (name="Vehiculo")
 public class Vehiculo {
 	
+<<<<<<< HEAD
+	
+	
+	
+	
+=======
 	@Id
 	private int id_vehiculo ;
 	private String Tipo;
@@ -82,6 +88,7 @@ public class Vehiculo {
 	public void setKilometraje(float kilometraje) {
 		Kilometraje = kilometraje;
 	}
+>>>>>>> 70411d265787a0b44781822ca89a21366eb040a6
 
 	
 }
