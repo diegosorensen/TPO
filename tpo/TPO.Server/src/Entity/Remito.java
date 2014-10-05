@@ -1,6 +1,8 @@
 package Entity;
 
-import javax.persistence.Entity;
+import java.sql.Date;
+
+import javax.persistence.*;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -23,8 +25,8 @@ public class Remito {
 	private Manifiesto manifiesto;
 	private  int Id_SucOrigen;
 	private int  id_SucDestino;
-	private DateTime FechaEntrega ;
-	private DateTime FechaMaxima ;
+	private Date FechaEntrega ;
+	private Date FechaMaxima ;
 	private String CondicionesEspeciales;
 	
 	
@@ -54,16 +56,16 @@ public class Remito {
 	public void setId_SucDestino(int id_SucDestino) {
 		this.id_SucDestino = id_SucDestino;
 	}
-	public DateTime getFechaEntrega() {
+	public Date getFechaEntrega() {
 		return FechaEntrega;
 	}
-	public void setFechaEntrega(DateTime fechaEntrega) {
+	public void setFechaEntrega(Date fechaEntrega) {
 		FechaEntrega = fechaEntrega;
 	}
-	public DateTime getFechaMaxima() {
+	public Date getFechaMaxima() {
 		return FechaMaxima;
 	}
-	public void setFechaMaxima(DateTime fechaMaxima) {
+	public void setFechaMaxima(Date fechaMaxima) {
 		FechaMaxima = fechaMaxima;
 	}
 	public String getCondicionesEspeciales() {
