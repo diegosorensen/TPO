@@ -1,11 +1,8 @@
 package Bean;
 
-import java.io.Serializable;
-
-public class ReciboDTO  implements Serializable {
+public class ReciboDTO {
 
 
-	private static final long serialVersionUID = 1L;
 	private int ID_Recibo;	
 	private int ID_Cliente;	
 	private int id_itemRecibo; 

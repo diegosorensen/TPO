@@ -26,11 +26,8 @@ public class PaqueteDTO  implements Serializable {
 	private List<CoordenadasGPSDTO> CoordenadaGps; //Flata crear clase GPS
 	private int 	 Id_remito;
 	private int 	 id_Manifiesto;
-	private ReciboDTO recibo;
-	private ClienteDTO	 cliente;
-	//private SucursalDTO origen;  
-	//private SucursalDTO destino;
-	//private List<Destinatario> destinatarios;
+	private int 	 id_recibo;
+	private int 	 Destino;
 	private String   Refrigerada;
 	private String 	 Manipulacion;
 	private String   Estado;
