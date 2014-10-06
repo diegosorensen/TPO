@@ -28,9 +28,17 @@ public class Vehiculo {
 	private String CondicionesEspeciales; 
 	private String Patente;
 	private float Kilometraje;
+	@OneToMany
+	@JoinColumn(name="historico_mantenimiento")
+	private int id_historico;
+	
 	public int getId_vehiculo() {
 		return id_vehiculo;
 	}
+	
+	
+	
+	
 	public void setId_vehiculo(int id_vehiculo) {
 		this.id_vehiculo = id_vehiculo;
 	}
