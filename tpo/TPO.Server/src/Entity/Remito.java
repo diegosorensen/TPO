@@ -2,11 +2,17 @@ package Entity;
 
 import java.sql.Date;
 
+import javax.persistence.*;
 
+
+@Entity
+@Table (name="Remito")
 public class Remito {
 	
-	
+	@Id
 	private int id_remito;
+	@OneToMany
+	@JoinColumn(name="Manifiesto")
 	private Manifiesto manifiesto;
 	private  int Id_SucOrigen;
 	private int  id_SucDestino;
