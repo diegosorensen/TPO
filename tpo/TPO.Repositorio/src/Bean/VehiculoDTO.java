@@ -1,4 +1,4 @@
-package Entity;
+package Bean;
 
 import javax.persistence.*;
 import javax.persistence.Id;
@@ -10,16 +10,12 @@ import javax.persistence.Table;
 
 
 
-@Entity
-@Table (name="Vehiculo")
-public class Vehiculo {
+public class VehiculoDTO {
 	
-	@Id
+	
 	private int id_vehiculo ;
 	private String Tipo;
-		
-	@OneToMany
-	@JoinColumn(name="PlanDeMantenimiento")
+	
 	private int id_plan_mantenimiento;
 	
 	private float volumenTransportado; 
@@ -28,8 +24,7 @@ public class Vehiculo {
 	private String CondicionesEspeciales; 
 	private String Patente;
 	private float Kilometraje;
-	@OneToMany
-	@JoinColumn(name="historico_mantenimiento")
+	
 	private int id_historico;
 	
 	public int getId_vehiculo() {

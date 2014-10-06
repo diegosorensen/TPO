@@ -2,24 +2,9 @@ package Entity;
 
 import java.sql.Date;
 
-import javax.persistence.*;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
-import net.sourceforge.jtds.jdbc.DateTime;
-
-
-
-
-
-@Entity
-@Table(name="Remito")
 public class Remito {
 	
-	
-	@Id
 	
 	private int id_remito;
 	private Manifiesto manifiesto;
