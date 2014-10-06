@@ -1,8 +1,8 @@
-use java_practica1
-drop database java2014
-Create database  java2014;
+--use java_practica1
+--drop database java2014
+--Create database  java2014;
 
-use java2014
+--use java2014
 
 -- -----------------------------------------------------
 -- Table cliente
@@ -141,8 +141,20 @@ CREATE TABLE  Vehiculo (
   Kilometraje			 VARCHAR(45) NULL,
   PRIMARY KEY (id_Vehiculo),
   FOREIGN KEY (id_PlanDeMantenimiento)  REFERENCES PlanDeMantenimiento (id_PlanDeMantenimiento))
-  
 
+/*
+  CREATE TABLE  Vehiculo (
+  id_Vehiculo			 INT NOT NULL,
+  tipo					 VARCHAR(45) NULL,
+  id_PlanDeMantenimiento INT not NULL,
+  VolumenTransportado	 FLOAT NULL,
+  peso					 FLOAT NULL,
+  tara					 FLOAT NULL,
+  CondicionesEspeciales  VARCHAR(45) NULL,
+  Patente				 VARCHAR(45) NULL,
+  Kilometraje			 VARCHAR(45) NULL,
+  PRIMARY KEY (id_Vehiculo,id_PlanDeMantenimiento),
+  FOREIGN KEY (id_PlanDeMantenimiento)  REFERENCES PlanDeMantenimiento (id_PlanDeMantenimiento))*/
 -- -----------------------------------------------------
 -- Table Tracking
 -- -----------------------------------------------------
@@ -261,7 +273,7 @@ CREATE TABLE  Area (
   PRIMARY KEY (id_Area))
   
 
-
+/*
 -- -----------------------------------------------------
 -- Table Empleado
 -- -----------------------------------------------------
@@ -279,9 +291,24 @@ CREATE TABLE  Empleado (
   PRIMARY KEY (id_Empleado, id_Area),
   CONSTRAINT fk_Empleado_Area1
     FOREIGN KEY (id_Area)  REFERENCES Area (id_Area))
-  
+  */
+-- -----------------------------------------------------
+-- Table Empleado
+-- -----------------------------------------------------
+IF OBJECT_ID('Empleado', 'U') IS NOT NULL
+DROP TABLE Empleado;
+ 
+CREATE TABLE  Empleado (
+  id_Empleado	INT NOT NULL,
+  id_Area		INT NOT NULL,
+  Nombre		VARCHAR(45) NULL,
+  Apellido		VARCHAR(45) NULL,
+  NroEmpleado	INT NULL,
+  Cargo			VARCHAR(45) NULL,
+  PRIMARY KEY (id_Empleado),
+  FOREIGN KEY (id_Area)  REFERENCES Area (id_Area))
 
-
+/*
 -- -----------------------------------------------------
 -- Table Sucursal_has_Empleado
 -- -----------------------------------------------------
@@ -298,6 +325,21 @@ CREATE TABLE  Sucursal_has_Empleado (
     FOREIGN KEY (Sucursal_id_Sucursal)					  REFERENCES Sucursal (id_Sucursal),
   CONSTRAINT fk_Sucursal_has_Empleado_Empleado1
     FOREIGN KEY (Empleado_id_Empleado , Empleado_id_Area) REFERENCES Empleado (id_Empleado , id_Area))
+	*/
+
+-- -----------------------------------------------------
+-- Table Sucursal_has_Empleado
+-- -----------------------------------------------------
+IF OBJECT_ID('Sucursal_has_Empleado', 'U') IS NOT NULL
+DROP TABLE Sucursal_has_Empleado;
+  
+
+CREATE TABLE  Sucursal_has_Empleado (
+  Sucursal_id_Sucursal	INT NOT NULL,
+  Empleado_id_Empleado	INT NOT NULL,
+  PRIMARY KEY (Sucursal_id_Sucursal, Empleado_id_Empleado),
+  FOREIGN KEY (Sucursal_id_Sucursal) REFERENCES Sucursal (id_Sucursal),
+  FOREIGN KEY (Empleado_id_Empleado) REFERENCES Empleado (id_Empleado))
 
 -- -----------------------------------------------------
 -- Table EmpresaSubcontratada
