@@ -7,8 +7,6 @@ import javax.persistence.*;
 
 
 
-
-
 @Entity
 @Table (name="PlanDeMantenimiento")
 

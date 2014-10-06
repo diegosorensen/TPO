@@ -3,6 +3,7 @@ package Entity;
 import java.util.Date;
 
 import javax.persistence.*;
+import javax.persistence.Id;
 
 @Entity
 @Table (name="envio")
