@@ -1,9 +1,14 @@
 package Bean;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class PaqueteDTO {
+public class PaqueteDTO  implements Serializable {
 			
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int 	 id_Paquete;		
 	private int 	 NroPaqute;			
 	private String 	 Clase;				
@@ -13,16 +18,19 @@ public class PaqueteDTO {
 	private float 	 Ancho;			
 	private float 	 Peso;		
 	private float 	 Volumen;	
-	private int 	 Id_Tipo_Tratamiento;
-	private int 	 ID_Tipo_Fragilidad;
+	private String 	 Tratamiento;
+	private String 	 Fragilidad;
 	private int  	 Apilable;
 	private int  	 ApilableCantidad;
-	private Date FechaEntrega;
-	private String 	 CoordenadaGps;
+	private Date 	 FechaEntrega;
+	private List<CoordenadasGPSDTO> CoordenadaGps; //Flata crear clase GPS
 	private int 	 Id_remito;
 	private int 	 id_Manifiesto;
-	private int 	 id_recibo;
-	private int 	 Destino;
+	private ReciboDTO recibo;
+	private ClienteDTO	 cliente;
+	//private SucursalDTO origen;  
+	//private SucursalDTO destino;
+	//private List<Destinatario> destinatarios;
 	private String   Refrigerada;
 	private String 	 Manipulacion;
 	private String   Estado;
@@ -166,6 +174,18 @@ public class PaqueteDTO {
 	}
 	public void setObservaciones(String observaciones) {
 		Observaciones = observaciones;
+	}
+	public String getTratamiento() {
+		return Tratamiento;
+	}
+	public void setTratamiento(String tratamiento) {
+		Tratamiento = tratamiento;
+	}
+	public String getFragilidad() {
+		return Fragilidad;
+	}
+	public void setFragilidad(String fragilidad) {
+		Fragilidad = fragilidad;
 	}
 
 

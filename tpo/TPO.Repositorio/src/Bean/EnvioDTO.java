@@ -1,14 +1,27 @@
 package Bean;
 
-import java.util.Date;
+import java.io.Serializable;
+import java.util.*;
 
-public class EnvioDTO {
+public class EnvioDTO implements Serializable  {
 
+
+	private static final long serialVersionUID = 1L;
 	private int id_Envio;				 
-	private int id_remito_intersucursal;
-	private int ID_EmpresaSubcontratada;
+	//private RemitoIntersucursal remito_intersucursal; // Esta clase aun no fue creada
+	private List<EmpresaSubcontratadaDTO> empresaSubcontratada;
 	private String Estado;				 
 	private Date Fecha;					 
+	public List<EmpresaSubcontratadaDTO> getEmpresaSubcontratada() {
+		return empresaSubcontratada;
+	}
+	public void setEmpresaSubcontratada(
+			List<EmpresaSubcontratadaDTO> empresaSubcontratada) {
+		this.empresaSubcontratada = empresaSubcontratada;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	private int Id_vehiculo;
 	
 	public int getId_Envio() {

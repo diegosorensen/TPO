@@ -1,12 +1,17 @@
 package Bean;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 
-public class ClienteDTO {
+public class ClienteDTO implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int    id_cliente;
 	private int    TipoCliente;	
 	private String Direccion;	

@@ -1,18 +1,30 @@
 package Bean;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class EmpresaSubcontratadaDTO {
+public class EmpresaSubcontratadaDTO implements Serializable   {
 	
-	private int id_EmpresaSubcontratada;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String RazonSocial;				
 	private String CUIT;						
 	private String Tipo;						
-	private int Id_VehiculoSubcontratado;
+	private VehiculoSubcontratadoDTO vehiculoSubcontratado;
 	
 	private List<EnvioDTO> envios = new ArrayList<EnvioDTO>();
+	
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	public void setVehiculoSubcontratado(
+			VehiculoSubcontratadoDTO vehiculoSubcontratado) {
+		this.vehiculoSubcontratado = vehiculoSubcontratado;
+	}
 	public List<EnvioDTO> getEnvios() {
 		return envios;
 	}

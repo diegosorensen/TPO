@@ -1,21 +1,18 @@
 package Bean;
 
+import java.io.Serializable;
 
-public class VehiculoSubcontratadoDTO {
-	
-	private int 	id_VehiculoSubcontratado;	
+
+public class VehiculoSubcontratadoDTO  implements Serializable {
+
+private static final long serialVersionUID = 1L;
+
 	private float	patente;
 	private float	volumen;
 	private float 	peso;	
 	private float 	tipo;
 	
 	
-	public int getId_VehiculoSubcontratado() {
-		return id_VehiculoSubcontratado;
-	}
-	public void setId_VehiculoSubcontratado(int id_VehiculoSubcontratado) {
-		this.id_VehiculoSubcontratado = id_VehiculoSubcontratado;
-	}
 	public float getPatente() {
 		return patente;
 	}
