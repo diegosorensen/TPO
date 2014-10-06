@@ -1,5 +1,6 @@
 package Bean;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +10,7 @@ import javax.persistence.*;
 
 
 
-public class PlanDeMantenimientoDTO {
+public class PlanDeMantenimientoDTO implements Serializable{
 	
 	private int id_plan_mantenimiento;
 	private  boolean Apto;

@@ -1,20 +1,16 @@
 package Bean;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 
 
 
 
-@Entity
-@Table (name="Manifiesto")
-public class ManifiestoDTO {
-	@Id
-	@OneToMany
-	@JoinColumn(name="Remito")
+
+public class ManifiestoDTO implements Serializable {
+	
 	private int NroManifiesto; 
 	private String Description;
 	

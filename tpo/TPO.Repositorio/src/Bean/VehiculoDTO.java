@@ -1,16 +1,14 @@
 package Bean;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 
 
 
 
-public class VehiculoDTO {
+public class VehiculoDTO implements Serializable {
 	
 	
 	private int id_vehiculo ;

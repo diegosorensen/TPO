@@ -1,5 +1,6 @@
 package Bean;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,17 +12,13 @@ import javax.persistence.*;
 
 
 
-@Entity
-@Table (name="TareaMantenimiento")
-public class TareaMantenimientoDTO {
+
+public class TareaMantenimientoDTO implements Serializable{
 	
 	
-	@Id
+	
 	private int id_tarea_mantenimiento;
-	@ManyToMany
-	@JoinTable(name	="PlanTareasMantenimiento",
-	joinColumns = @JoinColumn(name="id_tarea_mantenimiento"),
-	inverseJoinColumns = @JoinColumn(name="id_plan_mantenimiento"))
+	
 	private List<PlanDeMantenimiento> articulos = new ArrayList<PlanDeMantenimiento>();
 	
 	private  String Descripcion;
