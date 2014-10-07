@@ -9,13 +9,35 @@ import bean.ListArticulos;
 import bean.ListFacturas;
 import bean.SRV.ArticuloSRV;
 import bean.SRV.FacturaSRV;
+import bean.SRV.ProveedorSRV;
 
 
 public class sistema {
 
 	private ListArticulos articulos = new ListArticulos();
-	
 	private ListFacturas facturas = new ListFacturas();
+	
+	private List<Articulos> articulos1 = new ArrayList<Articulos>(); 
+	private List<Proveedor> proveedores = new ArrayList<Proveedor>();
+
+	public void newProveedor(int codigo, String descripcion, double precio){
+		Proveedor proveedor = new Proveedor();
+		
+		proveedor.setCodigo(codigo);
+		proveedor.setDescripcion(descripcion);
+		proveedor.setPrecio(precio);
+		
+		proveedores.add(proveedor);
+	}
+	
+	public void newArticulo(int id_factura, String descripcion){
+		Articulos articulo = new Articulos();
+		
+		articulo.setId_Factura(id_factura);
+		articulo.setDescripcion(descripcion);
+		
+		articulos1.add(articulo);
+	}
 	
 	public void addFactura(int id_Factura, String descripcion, List<Proveedor> articulo){
 		
@@ -39,13 +61,13 @@ public class sistema {
 		
 		facturas.addFactura(fact);
 	}
-	
+	/*
 	public void addArticulo(int codigoArticulo, String descripcion, double precio, int id_Factura){
 	/*	Aticulos art = new Aticulos();
 		art.setCodigo(codigoArticulo);
 		art.setDescripcion(descripcion);
 		art.setPrecio(precio);
-		return art; */
+		return art; *//*
 		Proveedor art = new Proveedor();
 		List<Articulos>  facturas = new ArrayList<Articulos>();
 		Articulos fact = new Articulos();
@@ -65,7 +87,7 @@ public class sistema {
 		
 		articulos.addArticulo(art);		
 		
-	}
+	}*/
 
 	public ListFacturas getFacturas() {
 		return facturas;
@@ -86,9 +108,30 @@ public class sistema {
 		return facturas.getFacturas();
 	}
 	
-	public void grabarArticulo(List<Proveedor> articulos){
-		new ArticuloSRV().grabarArticulo(articulos);
+	public void grabarArticulo(List<Articulos> articulos1){
+		new ArticuloSRV().grabarArticulo(articulos1);
 	}
+	public void grabarProveedor(List<Proveedor> proveedores){
+			new ProveedorSRV().grabarProveedor(proveedores);
+	}
+	
+	
+	public List<Articulos> getArticulos1() {
+		return articulos1;
+	}
+
+	public void setArticulos1(List<Articulos> articulos1) {
+		this.articulos1 = articulos1;
+	}
+
+	public List<Proveedor> getProveedores() {
+		return proveedores;
+	}
+
+	public void setProveedores(List<Proveedor> proveedores) {
+		this.proveedores = proveedores;
+	}
+
 	public List<Proveedor> getArticulos(){
 		return articulos.getArti();
 	}

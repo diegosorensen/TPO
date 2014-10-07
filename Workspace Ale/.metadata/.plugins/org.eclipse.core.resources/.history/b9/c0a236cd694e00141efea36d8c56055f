@@ -1,0 +1,72 @@
+package bean;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.*;
+
+@Entity
+@Table( name = "Proveedores" )
+public class Proveedor {
+	
+	@Id
+	private int codigo;
+	//private Factura factura;
+	private String descripcion ;
+	private double precio;
+
+	@ManyToMany
+	@JoinTable(name		="proart",
+	joinColumns 		= @JoinColumn(name="codigo"),
+	inverseJoinColumns 	= @JoinColumn(name="id_Factura"))
+	private List<Articulos> facturas = new ArrayList<Articulos>();
+	
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="proveedor")
+	private List<Venta> ventas = new ArrayList<Venta>();
+
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+
+	public List<Articulos> getFacturas() {
+		return facturas;
+	}
+
+	public void setFacturas(List<Articulos> facturas) {
+		this.facturas = facturas;
+	}
+
+	public List<Venta> getVentas() {
+		return ventas;
+	}
+
+	public void setVentas(List<Venta> ventas) {
+		this.ventas = ventas;
+	}
+	
+	
+	
+	
+	
+
+}

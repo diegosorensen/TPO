@@ -19,44 +19,55 @@ public class Proveedor {
 	@JoinTable(name		="proart",
 	joinColumns 		= @JoinColumn(name="codigo"),
 	inverseJoinColumns 	= @JoinColumn(name="id_Factura"))
-	private List<Articulos> facturas = new ArrayList<Articulos>();
+	private List<Articulos> articulos = new ArrayList<Articulos>();
 	
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="proveedor")
 	private List<Venta> ventas = new ArrayList<Venta>();
-	
-	public List<Articulos> getfacturas() {
-		return facturas;
-	}
-	public void setfacturas(List<Articulos> facturas) {
-		this.facturas = facturas;
-	}
+
 	public int getCodigo() {
 		return codigo;
 	}
-	/*public Factura getFactura() {
-		return factura;
-	}
-	public void setFactura(Factura factura) {
-		this.factura = factura;
-	}
-	public int getCodigo() {
-		return codigo;
-	}*/
+
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
+
 	public String getDescripcion() {
 		return descripcion;
 	}
+
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
+
 	public double getPrecio() {
 		return precio;
 	}
-	public void setPrecio(double precio2) {
-		this.precio = precio2;
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
 	}
+
+	public List<Articulos> getFacturas() {
+		return articulos;
+	}
+
+	public void setFacturas(List<Articulos> articulos) {
+		this.articulos = articulos;
+	}
+
+	public List<Venta> getVentas() {
+		return ventas;
+	}
+
+	public void setVentas(List<Venta> ventas) {
+		this.ventas = ventas;
+	}
+	public void newArticulo(Articulos articulo){
+		this.articulos.add(articulo);
+	}
+	
+	
 	
 	
 	

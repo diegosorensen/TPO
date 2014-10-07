@@ -12,6 +12,8 @@ import org.hibernate.SessionFactory;
 
 
 
+
+import bean.Articulos;
 import bean.Proveedor;
 
 public class HibernateArticuloDAO {
@@ -29,10 +31,10 @@ public class HibernateArticuloDAO {
 	
 
 	
-	public void grabarArticulo(List<Proveedor> articulos){
+	public void grabarArticulo(List<Articulos> articulos){
 		Session session = sf.openSession();
 		session.beginTransaction();
-		for(Proveedor articulo:articulos)
+		for(Articulos articulo:articulos)
 			session.persist(articulo);
 		session.flush();
 		session.getTransaction().commit();

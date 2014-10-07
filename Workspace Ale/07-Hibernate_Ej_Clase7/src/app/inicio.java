@@ -1,11 +1,17 @@
 package app;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import bean.Articulos;
+import bean.Proveedor;
+
 public class inicio {
 
 	public static void main(String[] args) {
 
 		sistema sis = new sistema();
-		sis.addArticulo(1,"Coca Cola",30.50, 8);
+		//sis.addArticulo(1,"Coca Cola",30.50, 8);
 		//sis.addArticulo(codigoArticulo, descripcion, precio, descripcion2, id_factura);
 		//sis.addFactura(1, "Factura de venta", sis.getArticulos());
 		
@@ -15,8 +21,47 @@ public class inicio {
 		//sis.grabarVenta("");
 		//System.out.println(sis.getArticulos());
 		
-		sis.grabarArticulo(sis.getArticulos());
-		sis.grabarFactura(sis.getFactura());
+		List<Proveedor> proveedores = new ArrayList<Proveedor>();
+		List<Articulos> articulos = new ArrayList<Articulos>();
+		
+		
+		Proveedor prov = new Proveedor();
+		Articulos art1 = new Articulos();
+		Articulos art2 = new Articulos();
+		
+		//sis.newProveedor(1, "COTO", 22.5);
+		//sis.newProveedor(2, "Carrefour", 18.5);
+		
+		prov.setCodigo(1);
+		prov.setDescripcion("COTO");
+		prov.setPrecio(18.5);
+		
+		art1.setId_Factura(1);
+		art1.setDescripcion("Caramelos");
+				
+		art2.setId_Factura(2);
+		art2.setDescripcion("manzanas");
+		
+		prov.newArticulo(art1);
+		prov.newArticulo(art2);
+		
+		proveedores.add(prov);
+		
+		articulos.add(art1);
+		articulos.add(art2);
+		//sis.newArticulo(1, "Sopa instantanea");
+		//sis.newArticulo(2, "RAID MAX");
+		//sis.newArticulo(3, "Papas Pringles");
+		
+			
+	//	sis.grabarArticulo(sis.getArticulos1());
+	//	sis.grabarProveedor(sis.getProveedores());
+		
+		sis.grabarProveedor(proveedores);
+		sis.grabarArticulo(articulos);
+		
+	//	sis.grabarArticulo(sis.getArticulos());
+	//	sis.grabarFactura(sis.getFactura());
 		
 	}
 

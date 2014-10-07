@@ -1,0 +1,49 @@
+package app;
+
+import bean.Articulos;
+import bean.Proveedor;
+
+public class inicio {
+
+	public static void main(String[] args) {
+
+		sistema sis = new sistema();
+		//sis.addArticulo(1,"Coca Cola",30.50, 8);
+		//sis.addArticulo(codigoArticulo, descripcion, precio, descripcion2, id_factura);
+		//sis.addFactura(1, "Factura de venta", sis.getArticulos());
+		
+		//sis.addArticulo(2,"pesi",29.50,"Exento de Ingresos Butos",2);		
+		//sis.addProveedor("31641","Casablanca", "juan.B Justo", "2330","palermo","1414");
+		
+		//sis.grabarVenta("");
+		//System.out.println(sis.getArticulos());
+		
+		Proveedor prov = new Proveedor();
+		Articulos art = new Articulos();
+		
+		//sis.newProveedor(1, "COTO", 22.5);
+		//sis.newProveedor(2, "Carrefour", 18.5);
+		
+		prov.setCodigo(1);
+		prov.setDescripcion("COTO");
+		prov.setPrecio(18.5);
+		
+		art.setId_Factura(1);
+		art.setDescripcion("Caramelos");
+		prov.set
+		
+		//sis.newArticulo(1, "Sopa instantanea");
+		sis.newArticulo(2, "RAID MAX");
+		sis.newArticulo(3, "Papas Pringles");
+		
+		
+		
+		sis.grabarArticulo(sis.getArticulos1());
+		sis.grabarProveedor(sis.getProveedores());
+		
+	//	sis.grabarArticulo(sis.getArticulos());
+	//	sis.grabarFactura(sis.getFactura());
+		
+	}
+
+}

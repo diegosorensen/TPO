@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/Repositorio"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrador/Escritorio/Mauro/Mauro/Facu/Aplicaciones Distribuidas/Programas y WKSPCE y librerias/librerias mysql hibernate/antlr-2.7.6.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrador/Escritorio/Mauro/Mauro/Facu/Aplicaciones Distribuidas/Programas y WKSPCE y librerias/librerias mysql hibernate/commons-collections-3.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrador/Escritorio/Mauro/Mauro/Facu/Aplicaciones Distribuidas/Programas y WKSPCE y librerias/librerias mysql hibernate/dom4j-1.6.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrador/Escritorio/Mauro/Mauro/Facu/Aplicaciones Distribuidas/Programas y WKSPCE y librerias/librerias mysql hibernate/hibernate3.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrador/Escritorio/Mauro/Mauro/Facu/Aplicaciones Distribuidas/Programas y WKSPCE y librerias/librerias mysql hibernate/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrador/Escritorio/Mauro/Mauro/Facu/Aplicaciones Distribuidas/Programas y WKSPCE y librerias/librerias mysql hibernate/javassist-3.12.0.GA.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrador/Escritorio/Mauro/Mauro/Facu/Aplicaciones Distribuidas/Programas y WKSPCE y librerias/librerias mysql hibernate/jta-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrador/Escritorio/Mauro/Mauro/Facu/Aplicaciones Distribuidas/Programas y WKSPCE y librerias/librerias mysql hibernate/jtds-1.2.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrador/Escritorio/Mauro/Mauro/Facu/Aplicaciones Distribuidas/Programas y WKSPCE y librerias/librerias mysql hibernate/jtds-1.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrador/Escritorio/Mauro/Mauro/Facu/Aplicaciones Distribuidas/Programas y WKSPCE y librerias/librerias mysql hibernate/mysql-connector-java-5.1.19-bin.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrador/Escritorio/Mauro/Mauro/Facu/Aplicaciones Distribuidas/Programas y WKSPCE y librerias/librerias mysql hibernate/slf4j-api-1.5.6.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrador/Escritorio/Mauro/Mauro/Facu/Aplicaciones Distribuidas/Programas y WKSPCE y librerias/librerias mysql hibernate/slf4j-api-1.6.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Administrador/Escritorio/Mauro/Mauro/Facu/Aplicaciones Distribuidas/Programas y WKSPCE y librerias/librerias mysql hibernate/slf4j-simple-1.5.6.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
