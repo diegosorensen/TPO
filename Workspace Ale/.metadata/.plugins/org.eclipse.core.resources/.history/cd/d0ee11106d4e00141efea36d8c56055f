@@ -21,44 +21,48 @@ public class inicio {
 		//sis.grabarVenta("");
 		//System.out.println(sis.getArticulos());
 		
-		//Creo 2 listas una de articulos y otra de proveedores
 		List<Proveedor> proveedores = new ArrayList<Proveedor>();
 		List<Articulos> articulos = new ArrayList<Articulos>();
 		
-		//Creo 1 proveedor y 2 articulos
+		
 		Proveedor prov = new Proveedor();
 		Articulos art1 = new Articulos();
 		Articulos art2 = new Articulos();
-
-		//Cargo datos al proveedor 1
+		
+		//sis.newProveedor(1, "COTO", 22.5);
+		//sis.newProveedor(2, "Carrefour", 18.5);
+		
 		prov.setCodigo(1);
 		prov.setDescripcion("COTO");
 		prov.setPrecio(18.5);
 		
-		//Creo datos al articulo 1
 		art1.setId_Factura(1);
 		art1.setDescripcion("Caramelos");
-		//Al articulo 1 le meto el proceedor en su lista de proveedores
-		art1.newProveedor(prov);
+		art1.se
 		
-		//Creo datos al articulo 1
 		art2.setId_Factura(2);
 		art2.setDescripcion("manzanas");
-		//Al articulo 2 le meto el proceedor en su lista de proveedores
-		art2.newProveedor(prov);
 		
-		//Al proveedor lo meto en la lista de proveedores
+		prov.newArticulo(art1);
+		prov.newArticulo(art2);
+		
 		proveedores.add(prov);
 		
-		//A los articulos 1 y 2 los meto en la lista de articulos
 		articulos.add(art1);
 		articulos.add(art2);
-
-		// Grabo proveedores y articulos Ambas LISTAS
-		sis.grabarProveedor(proveedores);
-		sis.grabarArticulo(articulos);
+		//sis.newArticulo(1, "Sopa instantanea");
+		//sis.newArticulo(2, "RAID MAX");
+		//sis.newArticulo(3, "Papas Pringles");
 		
-
+			
+	//	sis.grabarArticulo(sis.getArticulos1());
+	//	sis.grabarProveedor(sis.getProveedores());
+		
+		sis.grabarProveedor(proveedores);
+		//sis.grabarArticulo(articulos);
+		
+	//	sis.grabarArticulo(sis.getArticulos());
+	//	sis.grabarFactura(sis.getFactura());
 		
 	}
 

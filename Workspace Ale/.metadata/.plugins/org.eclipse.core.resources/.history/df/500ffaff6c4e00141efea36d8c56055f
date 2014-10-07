@@ -50,8 +50,5 @@ public class Articulos {
 		this.descripcion = descripcion;
 	}
 
-	public void newProveedor(Proveedor proveedor){
-		this.articulos.add(proveedor);
-	}
-	
+
 }
