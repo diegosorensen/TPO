@@ -1,0 +1,74 @@
+package bean;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.*;
+
+@Entity
+@Table (name="Articulos")
+public class Articulos {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id_articulo;
+	private String descripcion;
+	private double precio;
+	
+	@ManyToMany
+	@JoinTable(name		="proart",
+	joinColumns 		= @JoinColumn(name="id_articulo"),
+	inverseJoinColumns 	= @JoinColumn(name="cuit"))
+	private List<Proveedor> articulos = new ArrayList<Proveedor>();
+	
+	public int getId_articulo() {
+		return id_articulo;
+	}
+	public void setId_articulo(int id_articulo) {
+		this.id_articulo = id_articulo;
+	}
+
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="articulo")
+	private List<Venta> ventas = new ArrayList<Venta>();
+		
+	//private List<Articulo> articulo;
+	
+	
+	public List<Proveedor> getArticulos() {
+		return articulos;
+	}
+	public void setArticulos(List<Proveedor> articulos) {
+		this.articulos = articulos;
+	}
+	/*public List<Articulo> getArticulo() {
+		return articulo;
+	}
+	public void setArticulo(List<Articulo> articulo) {
+		this.articulo = articulo;
+	}*/
+	
+	public String getDescripcion() {
+		return descripcion;
+	}
+	
+	public double getPrecio() {
+		return precio;
+	}
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+	public List<Venta> getVentas() {
+		return ventas;
+	}
+	public void setVentas(List<Venta> ventas) {
+		this.ventas = ventas;
+	}
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public void newProveedor(Proveedor proveedor){
+		this.articulos.add(proveedor);
+	}
+	
+}

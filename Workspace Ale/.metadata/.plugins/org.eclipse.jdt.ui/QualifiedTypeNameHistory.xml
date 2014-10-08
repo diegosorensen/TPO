@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="bean.DAO.HibernateProveedorDAO"/>
+<fullyQualifiedTypeName name="bean.SRV.ProveedorSRV"/>
+<fullyQualifiedTypeName name="bean.Proveedor"/>
+<fullyQualifiedTypeName name="bean.Articulos"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+</qualifiedTypeNameHistroy>
