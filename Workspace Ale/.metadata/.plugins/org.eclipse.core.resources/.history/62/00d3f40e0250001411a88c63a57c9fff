@@ -1,0 +1,74 @@
+package bean.DAO;
+
+import hbt.hibernateUtil;
+
+import java.util.List;
+
+import org.hibernate.*;
+
+import bean.Articulos;
+import bean.Proveedor;
+import bean.Venta;
+
+public class HibernateVentaDAO {
+	
+	private static HibernateVentaDAO instancia = null;
+	private static SessionFactory sf = null;
+	
+	public static HibernateVentaDAO getInstancia(){
+		if(instancia == null){
+			sf = hibernateUtil.getSessionFactory();
+			instancia = new HibernateVentaDAO();
+		}
+		return instancia;
+	}
+	
+
+	
+	public void grabarVenta(Venta venta){
+		Session session = sf.openSession();
+		session.beginTransaction();
+		
+		session.save(venta);
+		session.flush();
+		session.getTransaction().commit();
+		session.close();
+	}
+
+
+
+//	public Proveedor leerProveedor(Proveedor provDB) {
+	public Venta leerProveedor(Venta venta) {
+		Session session = sf.openSession();
+
+		//session.load(provDB, provDB.getCuit());
+		// No andubo el get
+		//(Proveedor)session.get(Proveedor.class, provDB.getCuit());
+		 
+		session.close();
+		return venta;
+		//return (Proveedor)session.get(Proveedor.class, provDB.getCuit());
+	}
+
+
+
+	public List<Venta> leerVenta() {
+		
+		Session session = sf.openSession();
+		List<Venta> list = session.createQuery("From Ventas").list();
+		session.close();
+		return list;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+package app;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import bean.Articulos;
+import bean.Proveedor;
+
+public class inicio {
+
+	public static void main(String[] args) {
+
+		sistema sis = new sistema();
+		//Dar de alta 1 proveedor con 2 articulos
+		Proveedor prov	 = sis.altaProveedor();
+		Articulos art1 	 = sis.altaArticulo(15, "Lapicera", 22.75);	
+		//Al articulo 1 le meto el proceedor en su lista de proveedores
+		art1.newProveedor(prov);
+		// Grabo proveedores y articulos Ambas LISTAS
+		sis.grabarProveedor(prov);
+		sis.grabarArticulo(art1);
+		
+
+		
+	}
+
+}

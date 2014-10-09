@@ -1,0 +1,33 @@
+package bean.SRV;
+
+import java.util.List;
+
+import bean.Articulos;
+import bean.Proveedor;
+import bean.DAO.HibernateArticuloDAO;
+import bean.DAO.HibernateProveedorDAO;
+import bean.DAO.HibernateVentaDAO;
+
+public class VentaSRV {
+	private static HibernateVentaDAO dao;
+	static {
+		dao = HibernateProveedorDAO.getInstancia();
+	}
+	
+	public void grabarVenta(Venta venta){
+		dao.grabarProveedor(venta);
+	}
+
+	public Proveedor leerVenta(Venta venta) {
+		return dao.leerVenta(venta);
+		 	
+	}
+	
+	public List<Venta> ListVenta(){
+		
+	}
+
+	
+	
+	
+}

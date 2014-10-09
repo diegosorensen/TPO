@@ -1,0 +1,145 @@
+package app;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import bean.Proveedor;
+import bean.Articulos;
+import bean.ListArticulos;
+import bean.ListFacturas;
+import bean.Venta;
+import bean.SRV.ArticuloSRV;
+import bean.SRV.FacturaSRV;
+import bean.SRV.ProveedorSRV;
+import bean.SRV.VentaSRV;
+
+
+public class sistema {
+
+	private static final String String = null;
+	private ListArticulos articulos = new ListArticulos();
+	private ListFacturas facturas = new ListFacturas();
+	
+	private List<Articulos> articulos1 = new ArrayList<Articulos>(); 
+	private List<Proveedor> proveedores = new ArrayList<Proveedor>();
+
+
+	public ListFacturas getFacturas() {
+		return facturas;
+	}
+
+	public void setFacturas(ListFacturas facturas) {
+		this.facturas = facturas;
+	}
+
+	public void setArticulos(ListArticulos articulos) {
+		this.articulos = articulos;
+	}
+
+	public void grabarFactura(List<Articulos> factura){
+		new FacturaSRV().grabarFactura(factura);
+	}
+	public List<Articulos> getFactura(){
+		return facturas.getFacturas();
+	}
+	
+	public void grabarArticulo(Articulos articulo){
+		new ArticuloSRV().grabarArticulo(articulo);
+	}
+	public void grabarProveedor(Proveedor proveedore){
+			new ProveedorSRV().grabarProveedor(proveedore);
+	}
+	
+	public Proveedor leerProveedor(String cuit){
+		Proveedor provDB = new Proveedor();
+		provDB.setCuit(cuit);
+		return new ProveedorSRV().leerProveedor(provDB);
+		 
+	}
+	
+	
+	public List<Articulos> getArticulos1() {
+		return articulos1;
+	}
+
+	public void setArticulos1(List<Articulos> articulos1) {
+		this.articulos1 = articulos1;
+	}
+
+	public List<Proveedor> getProveedores() {
+		return proveedores;
+	}
+
+	public void setProveedores(List<Proveedor> proveedores) {
+		this.proveedores = proveedores;
+	}
+
+	public List<Proveedor> getArticulos(){
+		return articulos.getArti();
+	}
+
+	public Proveedor altaProveedor() {
+		
+		sistema sis = new sistema();
+		
+		//Creo 1 proveedor y 2 articulos
+		Proveedor prov	 = new Proveedor();
+				
+			String cuit = null;
+		
+		//Cargo datos al proveedor 1
+		prov.setCuit("2155000");
+		prov.setNombre("Carrefour");
+		prov.setCalle("Corrientes");
+		prov.setNumero(2286);
+		prov.setCodigoPostal(7070);
+		
+		
+		//Leer si existe el proveedor si existe le sumo 1
+//***** Si la tabla esta vacia me da error no lo pude solucionar con el session.get ****//		
+	/*	Proveedor provDB = sis.leerProveedor(prov.getCuit());		
+
+//Variables para sumarle 1 al CUIT siento este un String cualquiera
+		int numero1;
+		int numero2;		
+		
+		// Me fijo si el cuit que voy a ingresar es el mismo que el de la base
+		// de datos, si es el mismo, le sumo 1 sino lo cargo asi como esta
+		if ( provDB.getCuit() == prov.getCuit()){
+			
+			numero1 = Integer.valueOf(prov.getCuit());
+			numero2 = Integer.valueOf(provDB.getCuit());
+			numero1 = numero2 + 1;
+			cuit = numero1 + ""; 
+			prov.setCuit(cuit);
+//			System.out.println(numero1);
+//			System.out.println(provDB.getCuit());
+		}*/
+		
+		
+
+		
+		return prov;
+	}
+
+	public Articulos altaArticulo(int id_Articulo, String descripcion, double precio ) {
+		
+		Articulos art1 	 = new Articulos();
+		//Creo datos al articulo 1
+		art1.setId_articulo(id_Articulo);
+		art1.setDescripcion(descripcion);
+		art1.setPrecio(precio);
+				
+		return art1;
+	}
+
+	public List<Venta> listVentas() {
+		
+		return new VentaSRV().leerVentas();
+	}
+
+	public List<Venta> lisVProv(int cuit) {
+		// TODO Auto-generated method stub
+		return new VentasSRV().leerVProv(cuit);
+	}
+}
