@@ -1,0 +1,25 @@
+package bean.SRV;
+
+import java.util.List;
+
+import bean.Elaborado;
+import bean.Unidad;
+import bean.DAO.HibernateDAO;
+
+public class PersistenciaSRV {
+	private static HibernateDAO dao;
+	static {
+		dao = HibernateDAO.getInstancia();
+	}
+	
+	public void grabarElaborado(Elaborado elaborado){
+		dao.grabarElaborado(elaborado);
+	}
+
+	public void grabarUnidad(Unidad unidad) {
+		dao.grabarUnidad(unidad);
+		
+	}
+	
+	
+}

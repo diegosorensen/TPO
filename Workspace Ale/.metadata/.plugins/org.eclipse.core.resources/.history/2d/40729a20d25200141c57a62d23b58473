@@ -1,0 +1,106 @@
+package bean.DAO;
+
+import hbt.hibernateUtil;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.commons.collections.functors.UniquePredicate;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import bean.Elaborado;
+import bean.Material;
+import bean.Unidad;
+
+
+public class HibernateDAO {
+	
+	private static HibernateDAO instancia = null;
+	private static SessionFactory sf = null;
+	
+	public static HibernateDAO getInstancia(){
+		if(instancia == null){
+			sf = hibernateUtil.getSessionFactory();
+			instancia = new HibernateDAO();
+		}
+		return instancia;
+	}
+	
+
+	
+	public void grabarElaborado(Elaborado elaborado){
+		Session session = sf.openSession();
+		session.beginTransaction();
+		
+		session.persist(elaborado);
+		session.flush();
+		session.getTransaction().commit();
+		session.close();
+	}
+
+
+
+	public void grabarUnidad(Unidad unidad) {
+		Session session = sf.openSession();
+		session.beginTransaction();
+		
+		session.persist(unidad);
+		session.flush();
+		session.getTransaction().commit();
+		session.close();
+		
+		
+	}
+
+
+
+	public List<Material> leerMateriales(int nroMaterial) {
+		List<Material> materiales = new ArrayList<Material>();
+		
+		Session session = sf.openSession();
+		session.load(materiales, getClass());
+		
+		return materiales;
+	}
+
+
+
+	public Material leerMaterial(int nroMaterial) {
+		Material material = new Material();
+		
+		System.out.println(nroMaterial);
+		material.setCodMaterial(nroMaterial);
+		
+		Session session = sf.openSession();
+				
+		System.out.println("Justo antes de leer el material");
+		
+		material.setCodMaterial(nroMaterial);
+		
+		System.out.println(material.getCodMaterial());
+		session.load(material, material.getCodMaterial());
+		
+		return material;
+	}
+
+
+
+	public List<Unidad> leerUnidads(int codUnidad) {
+		Session session = sf.openSession();
+		List<Unidad> unidades = session.createQuery("from unidades").list();
+		return null;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

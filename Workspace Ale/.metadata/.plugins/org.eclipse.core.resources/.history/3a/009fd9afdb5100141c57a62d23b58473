@@ -1,0 +1,55 @@
+package bean.DAO;
+
+import hbt.hibernateUtil;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+
+
+
+
+
+
+import bean.Articulos;
+import bean.Proveedor;
+
+public class HibernateDAO {
+	
+	private static HibernateDAO instancia = null;
+	private static SessionFactory sf = null;
+	
+	public static HibernateDAO getInstancia(){
+		if(instancia == null){
+			sf = hibernateUtil.getSessionFactory();
+			instancia = new HibernateDAO();
+		}
+		return instancia;
+	}
+	
+
+	
+	public void grabarArticulo(Articulos articulo){
+		Session session = sf.openSession();
+		session.beginTransaction();
+		
+		session.persist(articulo);
+		session.flush();
+		session.getTransaction().commit();
+		session.close();
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

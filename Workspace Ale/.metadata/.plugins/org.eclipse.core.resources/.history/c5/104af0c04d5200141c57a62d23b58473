@@ -1,0 +1,77 @@
+package bean;
+
+import java.util.List;
+
+import javax.persistence.*;
+
+@Entity
+@Table (name="SemiElaborados")
+public class SemiElaborado {
+
+@Id	
+private int codProducto;
+private String descripcion;
+
+
+private double costo;
+private String AlmacenadoComo;
+
+@ManyToMany
+@JoinTable(	name = "materialSemi",
+			joinColumns 		= @JoinColumn(name="codProducto"),
+			inverseJoinColumns  = @JoinColumn(name="codMaterial"))
+private List<Material> materiales;
+
+@ManyToMany
+@JoinTable(	name = "compuestoDe",
+			joinColumns 		= @JoinColumn(name="codProductoSM"),
+			inverseJoinColumns  = @JoinColumn(name="codProductoE"))
+private List<Elaborado> elaborados;
+
+@ManyToOne
+@JoinColumn(name="codigoUnidad")
+private Unidad unidad;
+
+public int getCodProducto() {
+	return codProducto;
+}
+
+public void setCodProducto(int codProducto) {
+	this.codProducto = codProducto;
+}
+
+public String getDescripcion() {
+	return descripcion;
+}
+
+public void setDescripcion(String descripcion) {
+	this.descripcion = descripcion;
+}
+
+public double getCosto() {
+	return costo;
+}
+
+public void setCosto(double costo) {
+	this.costo = costo;
+}
+
+public String getAlmacenadoComo() {
+	return AlmacenadoComo;
+}
+
+public void setAlmacenadoComo(String almacenadoComo) {
+	AlmacenadoComo = almacenadoComo;
+}
+
+public List<Material> getMateriales() {
+	return materiales;
+}
+
+public void setMateriales(List<Material> materiales) {
+	this.materiales = materiales;
+}	
+
+
+
+}

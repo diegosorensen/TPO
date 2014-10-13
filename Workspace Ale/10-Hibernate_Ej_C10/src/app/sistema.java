@@ -1,0 +1,40 @@
+package app;
+
+import java.util.List;
+
+import bean.Material;
+import bean.Unidad;
+import bean.SRV.PersistenciaSRV;
+
+
+public class sistema {
+
+	
+	public Unidad altaUnidad(int codigo, String descripcion) {
+		Unidad unidad =  new Unidad();
+		unidad.setCodigoUnidad(codigo);
+		unidad.setDescripcion(descripcion);
+		return unidad;
+	}
+
+	public void grabarUnidad(Unidad unidad) {
+	new PersistenciaSRV().grabarUnidad(unidad);	
+		
+	}
+
+	public List<Material> leerMateriales(int nroMaterial) {
+
+		return new PersistenciaSRV().leerMateriales(nroMaterial);
+	}
+
+	public Material leerMaterial(int nroMaterial) {
+		return new PersistenciaSRV().leerMaterial(nroMaterial);
+	}
+
+	public List<Unidad> leerUnidad(int codUnidad) {
+		return new PersistenciaSRV().leerUnidades(codUnidad) ;
+	}
+
+
+
+}

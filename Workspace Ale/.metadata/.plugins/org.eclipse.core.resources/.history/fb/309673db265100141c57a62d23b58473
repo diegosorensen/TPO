@@ -1,0 +1,18 @@
+package bean;
+
+import javax.persistence.*;
+
+@Entity
+@Table (name="Materiales")
+public class Material {
+
+@Id	
+private int codMaterial;
+private String descripcion;
+private int uniCompra;
+private int uniUso;
+
+	
+
+
+}

@@ -1,0 +1,18 @@
+package app;
+
+import bean.Unidad;
+
+
+public class sistema {
+
+	
+	public Unidad altaUnidad(int codigo, String descripcion) {
+		Unidad unidad =  new Unidad();
+		unidad.setCodigoUnidad(codigo);
+		unidad.setDescripcion(descripcion);
+		return unidad;
+	}
+	
+
+
+}

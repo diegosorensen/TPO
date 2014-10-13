@@ -1,0 +1,18 @@
+package bean;
+
+import javax.persistence.*;
+
+@Entity
+@Table (name="SemiElaborados")
+public class SemiElaborado {
+
+@Id	
+private int codProducto;
+private String descripcion;
+private double costo;
+private String AlmacenadoComo;
+
+	
+
+
+}

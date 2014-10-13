@@ -1,0 +1,25 @@
+package bean;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.*;
+
+@Entity
+@Table (name="Unidades")
+public class Unidad {
+
+@Id	
+private int codigoUnidad;
+private String descripcion;
+	
+@ManyToOne(cascade=CascadeType.ALL)
+private List<Material> materiales = new ArrayList<Material>();
+
+@ManyToOne(cascade=CascadeType.ALL)
+private List<SemiElaborado> semiElaborados = new ArrayList<SemiElaborado>();
+
+@ManyToOne(cascade=CascadeType.ALL)
+private List<Elaborado> elaborados = new ArrayList<Elaborado>();
+
+}

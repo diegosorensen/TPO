@@ -1,0 +1,13 @@
+package bean;
+
+import javax.persistence.*;
+
+@Entity
+@Table (name="Unidades")
+public class Unidad {
+
+@Id	
+private int codigoUnidad;
+private String descripcion;
+	
+}

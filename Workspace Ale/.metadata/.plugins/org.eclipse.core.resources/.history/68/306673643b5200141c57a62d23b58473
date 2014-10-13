@@ -1,0 +1,27 @@
+package app;
+
+import java.util.List;
+
+import bean.Articulo;
+import bean.Unidad;
+import bean.SRV.ArticuloSRV;
+import bean.SRV.PersistenciaSRV;
+
+
+public class sistema {
+
+	
+	public Unidad altaUnidad(int codigo, String descripcion) {
+		Unidad unidad =  new Unidad();
+		unidad.setCodigoUnidad(codigo);
+		unidad.setDescripcion(descripcion);
+		return unidad;
+	}
+
+	public void grabarUnidad(Unidad unidad) {
+	new PersistenciaSRV().grabarUnidad(unidad);	
+		
+	}
+
+
+}

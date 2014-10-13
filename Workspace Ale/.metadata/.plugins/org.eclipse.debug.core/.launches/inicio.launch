@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/07-Hibernate_Ej_Clase7/src/app/inicio.java"/>
+<listEntry value="/xhbt-03-herencia-jointables/src/app/Inicio.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
 </listAttribute>
-<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="app.inicio"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="07-Hibernate_Ej_Clase7"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="app.Inicio"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="xhbt-03-herencia-jointables"/>
 </launchConfiguration>

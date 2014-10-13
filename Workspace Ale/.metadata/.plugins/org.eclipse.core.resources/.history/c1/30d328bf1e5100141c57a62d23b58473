@@ -1,0 +1,15 @@
+package bean;
+
+import javax.persistence.*;
+
+@Entity
+@Table (name="Unidades")
+public class Material {
+
+@Id	
+private int codigoUnidad;
+private String descripcion;
+	
+
+
+}
