@@ -10,6 +10,9 @@ public class PaqueteDTO  implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	public SucursalDTO getDestino() {
+		return destino;
+	}
 	private int 	 id_Paquete;		
 	private int 	 NroPaqute;			
 	private String 	 Clase;				
@@ -48,18 +51,12 @@ public class PaqueteDTO  implements Serializable {
 	public void setOrigen(SucursalDTO origen) {
 		this.origen = origen;
 	}
-	public List<DestinatarioDTO> getDestinatarios() {
-		return destinatarios;
-	}
-	public void setDestinatarios(List<DestinatarioDTO> destinatarios) {
-		this.destinatarios = destinatarios;
-	}
+	
 	public void setDestino(SucursalDTO destino) {
 		this.destino = destino;
 	}
 	private SucursalDTO origen;  
 	private SucursalDTO destino;
-	private List<DestinatarioDTO> destinatarios;
 	private String   Refrigerada;
 	private String 	 Manipulacion;
 	private String   Estado;

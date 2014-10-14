@@ -1,0 +1,33 @@
+import java.rmi.*;
+import java.rmi.registry.LocateRegistry;
+
+import entity.Elaborado;
+
+public class Server {
+	
+	public static void main(String[] args){
+		
+		new Server();
+	}
+
+	public Server(){
+		iniciar();
+	}
+	
+	public void iniciar(){
+		try {
+			System.out.println("local regstry");
+			//System.setSecurityManager(new RMISecurityManager());
+			LocateRegistry.createRegistry(8993);
+			Elaborado elaborado = new Elaborado();
+			Naming.rebind("//localhost/Sumas", (Remote) elaborado);
+			System.out.println("Fijado en localhost");
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Error aca");
+			e.printStackTrace();
+			
+		}
+	}
+}
