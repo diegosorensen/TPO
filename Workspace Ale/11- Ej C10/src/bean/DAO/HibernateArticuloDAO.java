@@ -29,7 +29,6 @@ public class HibernateArticuloDAO {
 		return instancia;
 	}
 	
-
 	
 	public void grabarArticulo(Articulos articulo){
 		Session session = sf.openSession();

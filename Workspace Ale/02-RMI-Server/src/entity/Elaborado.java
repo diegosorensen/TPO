@@ -1,9 +1,8 @@
 package entity;
 
-import java.rmi.server.UnicastRemoteObject;
-import java.util.List;
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table (name="Elaborado")

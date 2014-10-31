@@ -1,5 +1,7 @@
 import java.rmi.Naming;
 
+import paquete.Opciones;
+
 public class Cliente {
 
 	Opciones menu;

@@ -1,18 +1,22 @@
+package nuevopackage;
+
+
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
+import paquete.Opciones;
 import bean.SRV.PersistenciaSRV;
 import entity.Elaborado;
 
+public class NegocioRemoto extends UnicastRemoteObject implements Opciones {
+	protected NegocioRemoto() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
-public class Grabar extends UnicastRemoteObject implements Opciones{
-
-	private static final long serialVersionUID = 1L;
-
-
-	public Grabar() throws RemoteException { }
-
-
+	private static final long serialVersionUID = 4516149167297806966L;
+	
+	@Override
 	public void grabar(int codProducto, String descripcion, double precioVenta) {
 		Elaborado elaborado = new Elaborado();
 		elaborado.setCodProducto(codProducto);
@@ -20,8 +24,8 @@ public class Grabar extends UnicastRemoteObject implements Opciones{
 		elaborado.setPrecioVenta(precioVenta);
 		
 		new PersistenciaSRV().grabarElaborado(elaborado);
-	};
-
+		
+	}
 
 	@Override
 	public int sumar(int a, int b) throws RemoteException {
@@ -30,5 +34,5 @@ public class Grabar extends UnicastRemoteObject implements Opciones{
 	}
 
 	
-}
 
+}

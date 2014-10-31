@@ -2,18 +2,18 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
-	<classpathentry kind="lib" path="E:/Ale/JAVA/Clases/C06/lib/antlr-2.7.6.jar"/>
-	<classpathentry kind="lib" path="E:/Ale/JAVA/Clases/C06/lib/commons-collections-3.1.jar"/>
-	<classpathentry kind="lib" path="E:/Ale/JAVA/Clases/C06/lib/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="E:/Ale/JAVA/Clases/C06/lib/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="E:/Ale/JAVA/Clases/C06/lib/ejb3-persistence.jar"/>
-	<classpathentry kind="lib" path="E:/Ale/JAVA/Clases/C06/lib/hibernate3.jar"/>
-	<classpathentry kind="lib" path="E:/Ale/JAVA/Clases/C06/lib/hibernate-annotations.jar"/>
-	<classpathentry kind="lib" path="E:/Ale/JAVA/Clases/C06/lib/hibernate-commons-annotations.jar"/>
-	<classpathentry kind="lib" path="E:/Ale/JAVA/Clases/C06/lib/javassist-3.4.GA.jar"/>
-	<classpathentry kind="lib" path="E:/Ale/JAVA/Clases/C06/lib/jta-1.1.jar"/>
-	<classpathentry kind="lib" path="E:/Ale/JAVA/Clases/C06/lib/jtds-1.2.5.jar"/>
-	<classpathentry kind="lib" path="E:/Ale/JAVA/Clases/C06/lib/slf4j-api-1.5.6.jar"/>
-	<classpathentry kind="lib" path="E:/Ale/JAVA/Clases/C06/lib/slf4j-simple-1.5.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Diego/workspace/Repo/lib/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Diego/workspace/Repo/lib/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Diego/workspace/Repo/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Diego/workspace/Repo/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Diego/workspace/Repo/lib/ejb3-persistence.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Diego/workspace/Repo/lib/hibernate3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Diego/workspace/Repo/lib/hibernate-annotations.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Diego/workspace/Repo/lib/hibernate-commons-annotations.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Diego/workspace/Repo/lib/javassist-3.4.GA.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Diego/workspace/Repo/lib/jta-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Diego/workspace/Repo/lib/jtds-1.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Diego/workspace/Repo/lib/slf4j-api-1.5.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Diego/workspace/Repo/lib/slf4j-simple-1.5.6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

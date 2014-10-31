@@ -1,7 +1,9 @@
-import java.rmi.*;
+package nuevopackage;
+
+import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
 
-import entity.Elaborado;
+import paquete.Opciones;
 
 public class Server {
 	

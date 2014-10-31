@@ -2,10 +2,6 @@ package bean.DAO;
 
 import hbt.hibernateUtil;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.commons.collections.functors.UniquePredicate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 

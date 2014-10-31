@@ -1,9 +1,7 @@
 package bean.SRV;
 
-import java.util.List;
-
-import entity.Elaborado;
 import bean.DAO.HibernateDAO;
+import entity.Elaborado;
 
 public class PersistenciaSRV {
 	private static HibernateDAO dao;
